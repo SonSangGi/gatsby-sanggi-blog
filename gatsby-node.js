@@ -50,11 +50,6 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
       },
     })
-    createPage({
-      path: post.node.frontmatter.category,
-      component: blogPost,
-      context: {},
-    })
   })
 }
 
