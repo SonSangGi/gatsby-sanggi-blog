@@ -5,10 +5,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `상기의 블로그`,
-    description: `상기의 블로그 입니다.`,
+    title: `블로그 이름`,
+    description: `"블로그 설명"`,
     image: `content/assets/iu.gif`,
-    author: `ssg3799`,
+    author: `SonSangGi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`, // head에 메타데이터 정보를 넣기 위한 플러그인 (검색엔진 최적화 등)
@@ -69,5 +69,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sass`,
   ],
 }

@@ -1,13 +1,26 @@
+@font-face {
+  font-family: "Lato";
+  src: url(https://fonts.googleapis.com/css?family=Lato&display=swap)
+    format("truetype");
+}
+li {
+  list-style: none;
+}
+
+/* *************************************************** */
 html {
-  font-family: sans-serif;
+  font-family: Lato, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-size: 112.5%;
+  font-size: 17px;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: #fff;
+  overflow-y: scroll;
 }
 article,
 aside,
@@ -43,6 +56,7 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
 }
 a:active,
 a:hover {
@@ -186,7 +200,6 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -334,7 +347,7 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
@@ -616,8 +629,18 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
+@media screen and (min-width: 88em) {
   html {
-    font-size: 100%;
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 54em) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 40em) {
+  html {
+    font-size: 17px;
   }
 }
