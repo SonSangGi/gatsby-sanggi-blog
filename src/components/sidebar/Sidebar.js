@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import "./sidebar.scss"
+import "./Sidebar.scss"
 
 const Sidebar = () => {
   const data = useStaticQuery(graphql`
