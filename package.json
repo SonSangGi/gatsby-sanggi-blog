@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-starter-sanggi",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "my theme",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "SonSangGi <ssg3799@gmail.com>",
   "dependencies": {
     "gatsby": "^2.18.12",
     "gatsby-background-image": "^0.9.14",
