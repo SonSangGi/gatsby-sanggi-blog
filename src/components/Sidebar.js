@@ -2,11 +2,11 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Image from "./image"
 
 const SidebarBlock = styled.div`
   position: fixed;
   overflow-x: hidden;
+  overflow-y: auto;
   left: 0;
   top: 0;
   bottom: 0;
@@ -37,16 +37,20 @@ const SidebarBlock = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rebeccapurple;
+    background: #202020 center / cover;
   }
 
   .sidebar-contents {
     height: 100%;
     position: absolute;
+    overflow: auto;
     padding: 5rem 0rem;
     right: 2.5rem;
     left: 2.5rem;
     z-index: 3;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .sidebar-about {
@@ -91,15 +95,24 @@ const Sidebar = () => {
           count: totalCount
         }
       }
+      file(relativePath: { eq: "sidebar.jpg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
     }
   `)
 
   const { author, description, title } = data.site.siteMetadata
   const { categories } = data.allMarkdownRemark
+  const { src } = data.file.childImageSharp.fluid
+  console.log(src)
 
   return (
     <SidebarBlock>
-      <div className="sidebar-bg" />
+      <div className="sidebar-bg" style={{ backgroundImage: `url(${src})` }} />
       <div className="sidebar-contents">
         <div className="sidebar-about">
           <h1>
@@ -109,24 +122,6 @@ const Sidebar = () => {
         </div>
         <div className="sidebar-category">
           <ul>
-            <li>
-              <Link to="/">All</Link>
-            </li>{" "}
-            <li>
-              <Link to="/">All</Link>
-            </li>{" "}
-            <li>
-              <Link to="/">All</Link>
-            </li>{" "}
-            <li>
-              <Link to="/">All</Link>
-            </li>{" "}
-            <li>
-              <Link to="/">All</Link>
-            </li>{" "}
-            <li>
-              <Link to="/">All</Link>
-            </li>{" "}
             <li>
               <Link to="/">All</Link>
             </li>
