@@ -1,4 +1,6 @@
 import React from "react"
+import Layout from "../components/Layout"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
 export default props => {
@@ -8,7 +10,14 @@ export default props => {
 
   console.log(post, siteTitle, previous, next)
 
-  return <div>{<h1>{post.frontmatter.title}</h1>}</div>
+  return (
+    <Layout>
+      <SEO title={post.frontmatter.title} />
+      <h1>{post.frontmatter.title}</h1>
+      <hr />
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    </Layout>
+  )
 }
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

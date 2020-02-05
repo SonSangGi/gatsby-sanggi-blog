@@ -6,8 +6,8 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://sonsanggi.netlify.com",
-    title: `블로그 이름`,
-    description: `"블로그 설명"`,
+    title: `상기의 블로그`,
+    description: `"숭숭"`,
     author: `SonSangGi`,
     contacts: {
       github: "https://github.com/SonSangGi",
@@ -17,6 +17,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`, // head에 메타데이터 정보를 넣기 위한 플러그인 (검색엔진 최적화 등)
     `gatsby-plugin-sitemap`, // 크롤링을 위한 플러그인
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://sonsanggi.netlify",
+        sitemap: "https://sonsanggi.netlify/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`, // markdown 이나 이미지등 파일을 노드로 변환 (graphql에서 배열 형태로 저장)
       options: {
