@@ -46,6 +46,8 @@ const Sidebar = () => {
   const { src } = data.sidebarFile.childImageSharp.fluid
   const fluid = data.avatar.childImageSharp.fluid
 
+  console.log(title)
+
   return (
     <div className="sidebar">
       <div className="sidebar-bg" style={{ backgroundImage: `url(${src})` }} />
@@ -78,10 +80,10 @@ const Sidebar = () => {
           <Img className="avatar" fluid={fluid} />
           <p>{description}</p>
         </div>
-        <a href={contacts["github"]} target="_blank">
+        <a href={contacts["github"]} target="_blank" rel="noopener noreferrer">
           <Icon name="github" />
         </a>
-        <a href={contacts["email"]} target="_blank">
+        <a href={contacts["email"]} target="_blank" rel="noopener noreferrer">
           <Icon name="email" />
         </a>
       </div>
