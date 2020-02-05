@@ -5,6 +5,7 @@
  */
 module.exports = {
   siteMetadata: {
+    siteUrl: "https://sonsanggi.netlify.com",
     title: `블로그 이름`,
     description: `"블로그 설명"`,
     author: `SonSangGi`,
