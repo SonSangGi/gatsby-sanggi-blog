@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout" // 이놈 때문에 here are multiple modules with names that only differ in casing. This can lead to unexpected behavior when compiling on a filesystem with other case-semantic. Use equal casing. 오류..
 import SEO from "../components/seo"
 
 const NotFoundPage = () => (
