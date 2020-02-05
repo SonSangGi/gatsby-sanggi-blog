@@ -1,24 +1,21 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import "./Sidebar.scss"
+import Icon from "../Icon"
 
 const Sidebar = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/icon.png/" }) {
-        childImageSharp {
-          fixed(width: 100, height: 100) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       site {
         siteMetadata {
           author
           description
-          image
           title
+          contacts {
+            github
+            email
+          }
         }
       }
       allMarkdownRemark {
@@ -27,20 +24,27 @@ const Sidebar = () => {
           count: totalCount
         }
       }
-      file(relativePath: { eq: "sidebar.jpg" }) {
+      sidebarFile: file(relativePath: { eq: "sidebar.jpg" }) {
         childImageSharp {
           fluid {
             src
           }
         }
       }
+      avatar: file(relativePath: { eq: "icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
-  const { author, description, title } = data.site.siteMetadata
+  const { author, description, title, contacts } = data.site.siteMetadata
   const { categories } = data.allMarkdownRemark
-  const { src } = data.file.childImageSharp.fluid
-  console.log(src)
+  const { src } = data.sidebarFile.childImageSharp.fluid
+  const fluid = data.avatar.childImageSharp.fluid
 
   return (
     <div className="sidebar">
@@ -57,6 +61,12 @@ const Sidebar = () => {
             <li>
               <Link to="/">All</Link>
             </li>
+            <li>
+              <Link to="/">All</Link>
+            </li>
+            <li>
+              <Link to="/">All</Link>
+            </li>
             {categories.map(c => (
               <li key={c.name}>
                 <Link to="/">{c.name}</Link>
@@ -64,6 +74,16 @@ const Sidebar = () => {
             ))}
           </ul>
         </div>
+        <div className="sidebar-profile">
+          <Img className="avatar" fluid={fluid} />
+          <p>{description}</p>
+        </div>
+        <a href={contacts["github"]} target="_blank">
+          <Icon name="github" />
+        </a>
+        <a href={contacts["email"]} target="_blank">
+          <Icon name="email" />
+        </a>
       </div>
     </div>
   )

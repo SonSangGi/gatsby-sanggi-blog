@@ -7,8 +7,11 @@ module.exports = {
   siteMetadata: {
     title: `블로그 이름`,
     description: `"블로그 설명"`,
-    image: `content/assets/iu.gif`,
     author: `SonSangGi`,
+    contacts: {
+      github: "https://github.com/SonSangGi",
+      email: "mailto:ssg3799@gmail.com",
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`, // head에 메타데이터 정보를 넣기 위한 플러그인 (검색엔진 최적화 등)
