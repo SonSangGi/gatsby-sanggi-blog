@@ -9,11 +9,7 @@ const Page = ({ edges }) => {
       {edges.map(edge => {
         const { category, title, description, date } = edge.node.frontmatter;
         return (
-          <div
-            className="content-box"
-            key={edge.node.fields.slug}
-            style={{ padding: '2.5rem 2.1875rem' }}
-          >
+          <div className="content-box" key={edge.node.fields.slug}>
             <div className="top">
               <span>{moment(date).format('MMMM DD YYYY')}</span>
               <Link className="category" to={`/category/${category}`}>
@@ -23,7 +19,9 @@ const Page = ({ edges }) => {
             <h2>
               <Link to={edge.node.fields.slug}>{title}</Link>
             </h2>
-            {title}
+            <Link className="desciption" to={edge.node.fields.slug}>
+              {description}
+            </Link>
           </div>
         );
       })}

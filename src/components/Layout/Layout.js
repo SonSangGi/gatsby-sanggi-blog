@@ -16,18 +16,9 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div style={{ height: '100vh', width: '100vw' }}>
+    <div style={{ height: '100%', width: '100%' }}>
       <Sidebar siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          marginLeft: `24rem`,
-          marginRight: `3rem`,
-          maxWidth: `42rem`,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-          hegiht: '100vh',
-        }}
-      >
+      <div className="content">
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

@@ -1,5 +1,7 @@
+@import '../../styles/variables';
 .page {
   .content-box {
+    margin-bottom: 2.5rem;
     line-height: 1.625rem;
     .top {
       font-size: 0.875rem;
@@ -9,6 +11,17 @@
         margin-left: 1rem;
         color: #5d93ff;
       }
+    }
+    h2 > a {
+      transition: 0.3s;
+      color: #f7a046;
+      &:hover {
+        transition: none;
+        color: #5d93ff;
+      }
+    }
+    .desciption {
+      color: #333;
     }
   }
 }
