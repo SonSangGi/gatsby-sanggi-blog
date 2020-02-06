@@ -15,21 +15,11 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    //if (typeof node.frontmatter.slug !== 'undefined') {
     const value = createFilePath({ node, getNode });
-    const dirname = getNode(node.parent).relativeDirectory;
     createNodeField({
       node,
       name: `slug`,
-      value: `/${dirname}${value}`,
+      value,
     });
-    // } else {
-    //   const value = createFilePath({ node, getNode });
-    //   createNodeField({
-    //     node,
-    //     name: `slug`,
-    //     value,
-    //   });
-    // }
   }
 };

@@ -28,14 +28,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`, // markdown 이나 이미지등 파일을 노드로 변환 (graphql에서 배열 형태로 저장)
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content`,
+        name: `pages`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/assets`,
         name: `assets`,
       },
     },
@@ -72,7 +72,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/assets/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
