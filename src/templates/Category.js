@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import { graphql } from 'gatsby';
-import moment from 'moment';
 import Page from '../components/Page';
 
 // data: 현재 페이지에서 export한 query

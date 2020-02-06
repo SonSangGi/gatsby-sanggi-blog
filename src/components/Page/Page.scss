@@ -1,0 +1,14 @@
+.page {
+  .content-box {
+    line-height: 1.625rem;
+    .top {
+      font-size: 0.875rem;
+      font-weight: 600;
+      .category {
+        display: inline-block;
+        margin-left: 1rem;
+        color: #5d93ff;
+      }
+    }
+  }
+}

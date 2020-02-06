@@ -1,14 +1,14 @@
-import React from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/seo"
-import { graphql } from "gatsby"
+import React from 'react';
+import Layout from '../components/Layout';
+import SEO from '../components/seo';
+import { graphql } from 'gatsby';
 
 export default props => {
-  const post = props.data.markdownRemark
-  const siteTitle = props.data.site.siteMetadata.title
-  const { previous, next } = props.pageContext
+  const post = props.data.markdownRemark;
+  const siteTitle = props.data.site.siteMetadata.title;
+  const { previous, next } = props.pageContext;
 
-  console.log(props)
+  console.log(props);
 
   return (
     <Layout>
@@ -17,8 +17,8 @@ export default props => {
       <hr />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -31,12 +31,15 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         description
         category
       }
     }
   }
-`
+`;

@@ -5,24 +5,24 @@
  */
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://sonsanggi.netlify.com",
+    siteUrl: 'https://sonsanggi.netlify.com',
     title: `상기의 블로그`,
     description: `"숭숭"`,
     author: `SonSangGi`,
     contacts: {
-      github: "https://github.com/SonSangGi",
-      email: "mailto:ssg3799@gmail.com",
+      github: 'https://github.com/SonSangGi',
+      email: 'mailto:ssg3799@gmail.com',
     },
   },
   plugins: [
     `gatsby-plugin-react-helmet`, // head에 메타데이터 정보를 넣기 위한 플러그인 (검색엔진 최적화 등)
     `gatsby-plugin-sitemap`, // 크롤링을 위한 플러그인
     {
-      resolve: "gatsby-plugin-robots-txt", //크롤러 트래픽을 관리하고 내 사이트 맵이 어디에 위치해 있는지도 알려줄 수 있음
+      resolve: 'gatsby-plugin-robots-txt', //크롤러 트래픽을 관리하고 내 사이트 맵이 어디에 위치해 있는지도 알려줄 수 있음
       options: {
-        host: "https://sonsanggi.netlify",
-        sitemap: "https://sonsanggi.netlify/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        host: 'https://sonsanggi.netlify',
+        sitemap: 'https://sonsanggi.netlify/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
@@ -79,10 +79,10 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-126273889-2`, // 구글 애널리틱스 트래킹 아이디
-        head: true,
+        head: true, // google search console 색인을 위해 head에 추가
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sass`,
   ],
-}
+};
