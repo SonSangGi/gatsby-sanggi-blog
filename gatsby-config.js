@@ -79,6 +79,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-126273889-2`, // 구글 애널리틱스 트래킹 아이디
+        head: true,
       },
     },
     `gatsby-plugin-offline`,
