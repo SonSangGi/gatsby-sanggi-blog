@@ -2,13 +2,15 @@
  * 페이지를 생성함
  * 다른 기능도 있는지
  */
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const createCategoryPages = require('./gatsby/create-category-page');
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/post.js`)
+  const blogPost = path.resolve(`./src/templates/Post.js`);
+
   const result = await graphql(
     `
       {
@@ -29,17 +31,18 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
   if (result.errors) {
-    throw result.errors
+    throw result.errors;
   }
-  const posts = result.data.allMarkdownRemark.edges
+
+  const posts = result.data.allMarkdownRemark.edges;
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+    const next = index === 0 ? null : posts[index - 1].node;
 
     createPage({
       path: post.node.frontmatter.category + post.node.fields.slug,
@@ -49,19 +52,21 @@ exports.createPages = async ({ graphql, actions }) => {
         previous,
         next,
       },
-    })
-  })
-}
+    });
+  });
+
+  await createCategoryPages(graphql, actions);
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
-}
+};

@@ -8,7 +8,7 @@ export default props => {
   const siteTitle = props.data.site.siteMetadata.title
   const { previous, next } = props.pageContext
 
-  console.log(post, siteTitle, previous, next)
+  console.log(props)
 
   return (
     <Layout>
@@ -19,6 +19,7 @@ export default props => {
     </Layout>
   )
 }
+
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {

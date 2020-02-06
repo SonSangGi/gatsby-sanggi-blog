@@ -1,12 +1,12 @@
-import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import "./Sidebar.scss"
-import Icon from "../Icon"
+import React from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import './Sidebar.scss';
+import Icon from '../Icon';
 
 const Sidebar = () => {
   const data = useStaticQuery(graphql`
-    query BioQuery {
+    query SidebarQuery {
       site {
         siteMetadata {
           author
@@ -39,14 +39,12 @@ const Sidebar = () => {
         }
       }
     }
-  `)
+  `);
 
-  const { author, description, title, contacts } = data.site.siteMetadata
-  const { categories } = data.allMarkdownRemark
-  const { src } = data.sidebarFile.childImageSharp.fluid
-  const fluid = data.avatar.childImageSharp.fluid
-
-  console.log(title)
+  const { author, description, title, contacts } = data.site.siteMetadata;
+  const { categories } = data.allMarkdownRemark;
+  const { src } = data.sidebarFile.childImageSharp.fluid;
+  const fluid = data.avatar.childImageSharp.fluid;
 
   return (
     <div className="sidebar">
@@ -63,15 +61,9 @@ const Sidebar = () => {
             <li>
               <Link to="/">All</Link>
             </li>
-            <li>
-              <Link to="/">All</Link>
-            </li>
-            <li>
-              <Link to="/">All</Link>
-            </li>
             {categories.map(c => (
               <li key={c.name}>
-                <Link to="/">{c.name}</Link>
+                <Link to={`/category/${c.name}`}>{c.name}</Link>
               </li>
             ))}
           </ul>
@@ -80,15 +72,15 @@ const Sidebar = () => {
           <Img className="avatar" fluid={fluid} />
           <p>{description}</p>
         </div>
-        <a href={contacts["github"]} target="_blank" rel="noopener noreferrer">
+        <a href={contacts['github']} target="_blank" rel="noopener noreferrer">
           <Icon name="github" />
         </a>
-        <a href={contacts["email"]} target="_blank" rel="noopener noreferrer">
+        <a href={contacts['email']} target="_blank" rel="noopener noreferrer">
           <Icon name="email" />
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
