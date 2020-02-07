@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+
 .sidebar {
   position: fixed;
   overflow-x: hidden;
@@ -12,6 +13,7 @@
   color: rgba(255, 255, 255, 0.75);
   text-align: center;
   font-family: Lato, sans-serif;
+  transition: 0.5s;
 
   @media screen {
     width: 288px;
@@ -100,6 +102,8 @@
   }
 }
 
-.open {
-  transform: translate(260px, 0px);
+@media screen and (max-width: $break-point-2) {
+  .open {
+    transform: translate(288px, 0px);
+  }
 }

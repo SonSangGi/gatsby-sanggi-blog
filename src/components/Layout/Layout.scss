@@ -36,3 +36,15 @@
     margin-right: 8rem;
   }
 }
+
+.side-open {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  z-index: 1;
+}
+@media screen and (min-width: $break-point-2) {
+  .side-open {
+    display: none;
+  }
+}
