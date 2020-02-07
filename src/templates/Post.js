@@ -12,7 +12,7 @@ export default props => {
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <h1>{post.frontmatter.title}</h1>
       <hr />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -37,7 +37,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date
-        description
         category
       }
     }
