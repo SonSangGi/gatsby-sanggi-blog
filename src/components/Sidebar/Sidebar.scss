@@ -1,3 +1,4 @@
+@import '../../styles/variables';
 .sidebar {
   position: fixed;
   overflow-x: hidden;
@@ -8,11 +9,33 @@
   z-index: 1;
   transform: translate3d(0, 0, 0);
   contain: strict;
-  width: 18rem;
   color: rgba(255, 255, 255, 0.75);
   text-align: center;
   font-family: Lato, sans-serif;
 
+  @media screen {
+    width: 288px;
+    max-width: 38rem;
+    min-height: 100vh;
+    font-size: $default-font-size;
+  }
+
+  @media screen and (max-width: $break-point-2) {
+    color: black;
+    left: -288px;
+  }
+
+  @media screen and (min-width: $break-point-2) {
+    color: red;
+  }
+
+  @media screen and (min-width: $break-point-3) {
+    color: orange;
+  }
+
+  @media screen and (min-width: $break-point-5) {
+    width: 300px;
+  }
   a {
     color: #fff;
     transition: color 1s, border-color 50ms;
@@ -75,4 +98,8 @@
       margin-bottom: 1.25rem;
     }
   }
+}
+
+.open {
+  transform: translate(260px, 0px);
 }

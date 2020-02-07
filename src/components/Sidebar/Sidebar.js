@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import './Sidebar.scss';
 import Icon from '../Icon';
+import icons from '../Icon/icons';
+import cn from 'classnames';
 
-const Sidebar = () => {
+const Sidebar = ({ open }) => {
   const data = useStaticQuery(graphql`
     query SidebarQuery {
       site {
@@ -47,7 +49,7 @@ const Sidebar = () => {
   const fluid = data.avatar.childImageSharp.fluid;
 
   return (
-    <div className="sidebar">
+    <div className={cn('sidebar', { open })}>
       <div className="sidebar-bg" style={{ backgroundImage: `url(${src})` }} />
       <div className="sidebar-contents">
         <div className="sidebar-about">

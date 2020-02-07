@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Sidebar from '../Sidebar';
 import './Layout.scss';
+import Icon from '../Icon';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -15,10 +16,18 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const [open, setOpen] = useState(true);
+
   return (
-    <div style={{ height: '100%', width: '100%' }}>
-      <Sidebar siteTitle={data.site.siteMetadata.title} />
+    <div style={{ height: '100vh', width: '100%' }}>
+      <Sidebar siteTitle={data.site.siteMetadata.title} open={open} />
       <div className="content">
+        <a
+          style={{ position: 'fixed', top: '20px', left: '0', zIndex: 1 }}
+          onClick={() => setOpen(!open)}
+        >
+          <Icon name="menu" />
+        </a>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

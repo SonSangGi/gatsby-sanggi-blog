@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "SonSangGi <ssg3799@gmail.com>",
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.19.12",
     "gatsby-background-image": "^0.9.14",
     "gatsby-image": "^2.2.40",
