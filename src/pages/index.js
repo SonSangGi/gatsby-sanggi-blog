@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import SEO from '../components/seo';
+import Head from '../components/Head';
 import Page from '../components/Page';
 
 const IndexPage = ({ data, pageContext }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <SEO title="Home" />
+      <Head title="Home" />
       <Page edges={edges} />
     </Layout>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import SEO from '../components/seo';
+import Head from '../components/Head';
 import { graphql } from 'gatsby';
 import Page from '../components/Page';
 
@@ -19,7 +19,7 @@ const Category = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={`${category}-${currentPage}`} />
+      <Head title={`${category}-${currentPage}`} />
       <Page edges={edges} />
     </Layout>
   );

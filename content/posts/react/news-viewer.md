@@ -1,22 +1,20 @@
 ---
-title: '외부 API를 연동하여 뉴스 뷰어 만들기'
+title: '외부 API를 연동하여 뉴스 뷰어 만들기(1) 비동기, 동기란?'
 date: 2020-2-3 16:21:13
 category: 'React'
-description: 'axios, Promise, async를 이용하여 뉴스 뷰어를 만들어보자'
 ---
 
-<ul>
-    <li>비동기 작업의 이해</li>
-    <li>axio로 API 호출해서 데이터 받아오기</li>
-    <li>newsapi API 키 발급받기</li>
-    <li>뉴스뷰어 UI 만들기</li>
-    <li>데이터 연동하기</li>
-    <li>카테고리 기능 구현하기</li>
-    <li>리액트 라우터 적용하기</li>
-    <li>usePromise 커스텀 Hook 만들기</li>
-</ul>
+- <b>비동기 작업의 이해</b>
+- axio로 API 호출해서 데이터 받아오기
+- newsapi API 키 발급받기
+- 뉴스뷰어 UI 만들기
+- 데이터 연동하기
+- 카테고리 기능 구현하기
+- 리액트 라우터 적용하기
 
-### `비동기 작업의 이해`
+<hr>
+
+### 비동기 작업의 이해
 
 <img src="https://dojang.io/pluginfile.php/14098/mod_page/content/7/047003.png" width="500px">
 <br>
