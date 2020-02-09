@@ -8,7 +8,6 @@ const Page = ({ edges }) => {
     <div className="page">
       {edges.map(edge => {
         const { category, title, description, date } = edge.node.frontmatter;
-        console.log(edge);
         return (
           <div className="content-box" key={edge.node.fields.slug}>
             <div className="top">

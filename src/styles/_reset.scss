@@ -183,7 +183,6 @@ h1 {
 h2 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -198,7 +197,6 @@ h2 {
 h3 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -549,7 +547,4 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: '';
-}
-li {
-  list-style-type: none;
 }

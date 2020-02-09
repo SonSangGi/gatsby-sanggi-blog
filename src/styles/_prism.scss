@@ -4,9 +4,50 @@
  * @author Ahmad Awais <https://twitter.com/MrAhmadAwais/>
  * @support Follow/tweet at https://twitter.com/MrAhmadAwais/
  */
+.post {
+  h2 {
+    position: relative;
+    margin: 55px 0px 12px;
+    padding: 5px 0px 5px 17px;
+    &::before {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(
+        0deg,
+        rgb(73, 137, 255) 0%,
+        rgb(73, 137, 255) 50%,
+        rgb(153, 0, 255) 50%,
+        rgb(153, 0, 255) 100%
+      );
+    }
+  }
+}
 blockquote {
+  position: relative;
   margin: 0;
-  border-left: 2px solid;
+  &::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(
+      0deg,
+      rgb(115, 120, 129) 0%,
+      rgb(255, 73, 73) 50%,
+      rgb(153, 0, 255) 75%,
+      rgb(153, 0, 255) 100%
+    );
+  }
   padding-left: 1.45rem;
   margin-bottom: 1.45rem;
 }

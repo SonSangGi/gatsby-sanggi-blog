@@ -33,7 +33,7 @@ const Sidebar = ({ open }) => {
           }
         }
       }
-      avatar: file(relativePath: { eq: "icon.png" }) {
+      avatar: file(relativePath: { eq: "profile.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 100) {
             ...GatsbyImageSharpFluid
