@@ -5,10 +5,10 @@
  */
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://sonsanggi.netlify.com',
-    title: `상기의 블로그`,
-    description: `"숭숭"`,
-    author: `SonSangGi`,
+    siteUrl: 'https://www.sanggi.dev',
+    title: `상기하다`,
+    description: `"초보개발자의 외장 메모리"`,
+    author: `Sanggi Son`,
     contacts: {
       github: 'https://github.com/SonSangGi',
       email: 'mailto:ssg3799@gmail.com',
@@ -78,7 +78,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-126273889-2`, // 구글 애널리틱스 트래킹 아이디
+        trackingId: `UA-126273889-3`, // 구글 애널리틱스 트래킹 아이디
         head: true, // google search console 색인을 위해 head에 추가
       },
     },
