@@ -4,7 +4,12 @@
  * @author Ahmad Awais <https://twitter.com/MrAhmadAwais/>
  * @support Follow/tweet at https://twitter.com/MrAhmadAwais/
  */
-
+blockquote {
+  margin: 0;
+  border-left: 2px solid;
+  padding-left: 1.45rem;
+  margin-bottom: 1.45rem;
+}
 code[class*='language-'],
 pre[class*='language-'] {
   color: #9efeff;
@@ -26,7 +31,7 @@ pre[class*='language-'] {
   font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono',
     'Ubuntu Mono', monospace;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.8rem;
   line-height: 25px;
   letter-spacing: 0.5px;
   text-shadow: 0 1px #222245;
@@ -69,7 +74,7 @@ pre[class*='language-'] {
 .token.comment,
 .token.prolog,
 .token.cdata {
-  color: #039211;
+  color: #b362ff;
 }
 
 .token.delimiter,

@@ -6,9 +6,10 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.sanggi.dev',
-    title: `상기하다`,
+    title: `상기하다.`,
     description: `"초보개발자의 외장 메모리"`,
     author: `Sanggi Son`,
+    about: ``,
     contacts: {
       github: 'https://github.com/SonSangGi',
       email: 'mailto:ssg3799@gmail.com',

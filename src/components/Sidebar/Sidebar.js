@@ -54,7 +54,7 @@ const Sidebar = ({ open }) => {
       <div className="sidebar-contents">
         <div className="sidebar-about">
           <h1>
-            <Link to="/">{author}</Link>
+            <Link to="/">{title}</Link>
           </h1>
           <p>{description}</p>
         </div>
@@ -72,7 +72,7 @@ const Sidebar = ({ open }) => {
         </div>
         <div className="sidebar-profile">
           <Img className="avatar" fluid={fluid} />
-          <p>{description}</p>
+          <p>{author}</p>
         </div>
         <a href={contacts['github']} target="_blank" rel="noopener noreferrer">
           <Icon name="github" />

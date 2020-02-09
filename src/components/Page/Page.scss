@@ -1,4 +1,8 @@
 @import '../../styles/variables';
+
+$date-color: #4eca0047;
+
+$category-color: #87cefa;
 .page {
   .content-box {
     margin-bottom: 2.5rem;
@@ -6,10 +10,56 @@
     .top {
       font-size: 0.875rem;
       font-weight: 600;
-      .category {
+      margin-bottom: 0.6rem;
+      .bookmark {
         display: inline-block;
+        position: relative;
+        padding-right: 10px;
+        .point {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          position: relative;
+          top: -2px;
+          right: -5px;
+          display: inline-block;
+          background-color: white;
+        }
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -10px;
+          content: ' ';
+          border-left: 10px solid transparent;
+        }
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: -10px;
+          content: ' ';
+          border-bottom: 20px solid;
+          border-left: 10px solid transparent;
+        }
+      }
+      .date {
+        background-color: $date-color;
+        &::before {
+          border-top: 20px solid $date-color;
+        }
+        &::after {
+          border-bottom: 20px solid $date-color;
+        }
+      }
+      .category {
         margin-left: 1rem;
-        color: #5d93ff;
+        color: white;
+        background-color: $category-color;
+        &::before {
+          border-top: 20px solid $category-color;
+        }
+        &::after {
+          border-bottom: 20px solid $category-color;
+        }
       }
     }
     h2 > a {

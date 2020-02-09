@@ -18,22 +18,12 @@
     width: 288px;
     max-width: 38rem;
     min-height: 100vh;
+    color: orange;
     font-size: $default-font-size;
   }
-
   @media screen and (max-width: $break-point-2) {
-    color: black;
     left: -288px;
   }
-
-  @media screen and (min-width: $break-point-2) {
-    color: red;
-  }
-
-  @media screen and (min-width: $break-point-3) {
-    color: orange;
-  }
-
   @media screen and (min-width: $break-point-5) {
     width: 300px;
   }
@@ -74,6 +64,7 @@
   }
 
   .sidebar-about {
+    font-family: serif;
     h1 {
       font-size: 2rem;
       line-height: 1.3;

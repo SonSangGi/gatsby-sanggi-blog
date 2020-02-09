@@ -8,19 +8,24 @@ const Page = ({ edges }) => {
     <div className="page">
       {edges.map(edge => {
         const { category, title, description, date } = edge.node.frontmatter;
+        console.log(edge);
         return (
           <div className="content-box" key={edge.node.fields.slug}>
             <div className="top">
-              <span>{moment(date).format('MMMM DD YYYY')}</span>
-              <Link className="category" to={`/category/${category}`}>
+              <div className="date bookmark">
+                {moment(date).format('MMMM DD YYYY')}
+                <i className="point" />
+              </div>
+              <Link className="category bookmark" to={`/category/${category}`}>
                 <span>{category}</span>
+                <i className="point" />
               </Link>
             </div>
             <h2>
               <Link to={edge.node.fields.slug}>{title}</Link>
             </h2>
             <Link className="desciption" to={edge.node.fields.slug}>
-              {description}
+              {edge.node.excerpt}
             </Link>
           </div>
         );

@@ -40,8 +40,11 @@
 .side-open {
   position: fixed;
   top: 20px;
-  left: 0;
+  left: 10px;
   z-index: 1;
+  .icon {
+    background: #d0d0d0;
+  }
 }
 @media screen and (min-width: $break-point-2) {
   .side-open {
