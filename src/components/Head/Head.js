@@ -69,6 +69,14 @@ function Head({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `naver-site-verification`,
+          content: `db4b9af6ac5ea1fbb6f60a142b6b54d340e869eb`,
+        },
+        {
+          name: `google-site-verification`,
+          content: `q7YNxCOeX-6FNdPPMYpovm94DjZ6CB_Leuf00Rg9f4c`,
+        },
       ].concat(meta)}
     />
   );
