@@ -9,7 +9,10 @@ module.exports = async (graphql, actions) => {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: {
+            fields: [frontmatter___date, frontmatter___category]
+            order: DESC
+          }
           limit: 1000
         ) {
           edges {
@@ -18,6 +21,7 @@ module.exports = async (graphql, actions) => {
                 slug
               }
               frontmatter {
+                title
                 date
                 category
               }
@@ -35,8 +39,20 @@ module.exports = async (graphql, actions) => {
   const posts = result.data.allMarkdownRemark.edges;
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+    // 같은 카테고리인 이전 페이지
+    const previous =
+      index !== posts.length - 1 &&
+      posts[index + 1].node.frontmatter.category ===
+        post.node.frontmatter.category
+        ? posts[index + 1].node
+        : null;
+    // 같은 카테고리인 다음 페이지
+    const next =
+      index !== 0 &&
+      posts[index - 1].node.frontmatter.category ===
+        post.node.frontmatter.category
+        ? posts[index - 1].node
+        : null;
 
     createPage({
       path: post.node.fields.slug,

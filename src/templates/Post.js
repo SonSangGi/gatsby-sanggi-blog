@@ -1,13 +1,16 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import moment from 'moment';
 
 export default props => {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
-  const { previous, next } = props.pageContext;
+  const { previous, next, test } = props.pageContext;
+
+  console.log(previous, next);
+  console.log(test);
 
   return (
     <Layout>
@@ -16,6 +19,22 @@ export default props => {
       <h1>{post.frontmatter.title}</h1>
       <hr />
       <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <hr />
+      {next && (
+        <div>
+          <p>
+            다음글 : <Link to={next.fields.slug}>{next.frontmatter.title}</Link>
+          </p>
+        </div>
+      )}
+      {previous && (
+        <div>
+          <p>
+            이전글 :{' '}
+            <Link to={previous.fields.slug}>{previous.frontmatter.title}</Link>
+          </p>
+        </div>
+      )}
     </Layout>
   );
 };
