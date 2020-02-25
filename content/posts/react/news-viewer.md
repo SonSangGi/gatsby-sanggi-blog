@@ -1,16 +1,8 @@
 ---
-title: '외부 API를 연동하여 뉴스 뷰어 만들기(1) 비동기, 동기란?'
+title: '자바스크립트 Promise, async/await ?'
 date: 2020-2-3 16:21:13
-category: 'React'
+category: 'JS'
 ---
-
-- <b>비동기 작업의 이해</b>
-- axio로 API 호출해서 데이터 받아오기
-- newsapi API 키 발급받기
-- 뉴스뷰어 UI 만들기
-- 데이터 연동하기
-- 카테고리 기능 구현하기
-- 리액트 라우터 적용하기
 
 <hr>
 

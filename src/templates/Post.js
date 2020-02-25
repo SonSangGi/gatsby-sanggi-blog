@@ -7,10 +7,7 @@ import moment from 'moment';
 export default props => {
   const post = props.data.markdownRemark;
   const siteTitle = props.data.site.siteMetadata.title;
-  const { previous, next, test } = props.pageContext;
-
-  console.log(previous, next);
-  console.log(test);
+  const { previous, next } = props.pageContext;
 
   return (
     <Layout>

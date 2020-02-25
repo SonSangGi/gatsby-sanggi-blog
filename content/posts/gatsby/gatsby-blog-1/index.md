@@ -56,7 +56,7 @@ Gatby는 React.js와 GraphQL로 정적 사이트를 만들어 주는데, 간단�
 다음은 현재 블로그의 페이지 점수를 Lighthouse 플러그인으로 계산한 이미지다.
 <img src="./page-score.png"/>
 
-위와 같이 Gatsby는 PWA뿐만 아니라 높은 질의 웹 사이트를 만들 수 있다.
+위와 같이 Gatsby를 사용하면 높은 완성도의 웹 사이트를 만들 수 있다.
 
 <hr/>
 
@@ -99,9 +99,10 @@ $gatsby develop
 <img src="./gatsby-default.png" width="500">
 
 이제 Gatsby를 시작하기 위한 기본 설정을 완료했다.<br/>
-다음으로 Gatsby의 구조와 각 파일별 용도, 페이지 생성을 배워보자.
 
-1. ### Gatsby 디렉토리 구조
+### Gatsby 디렉토리 구조
+
+Gatsby default starter일 경우 아래와 같은 디렉토리 구조를 가진다.
 
 ```
 |-- /.cache     Gatsby가 자동으로 생성하는 내부 캐시 폴더
@@ -111,7 +112,7 @@ $gatsby develop
     |-- /pages          기본 페이지 폴더, 컴포넌트의 파일 이름으로 URL이 생성된다.
         |-- /index.js       해당주소의 최상위 페이지
         |-- /404.js         에러 페이지
-    |-- /templates      gatsby-node에서 생성하는 페이지의 template를 생성하는 폴더
+    |-- /templates      gatsby-node의 createPage()에서 사용할 템플릿 컴포넌트 폴더
 |
 |-- gatsby-config.js    siteMetaData 및 gatsby 플러그인 설정 파일
 |-- gatsby-node.js      페이지 생성 및 노드 생성 파일
@@ -119,9 +120,6 @@ $gatsby develop
 |-- gatsby-browser.js   외부 라이브러리 정의 파일
 ```
 
-!각각 파일 및 폴더는 위 내용보다 많은 기능을 포함하고 있다.
-<u>
-<small>
+!각각 파일 및 폴더의 자세한 설명은
 <a href="https://www.gatsbyjs.org/docs/gatsby-project-structure/" target="_blank">상세참조사이트</a>
-</small>
-</u>
+에 자세히 기술되어있다.
