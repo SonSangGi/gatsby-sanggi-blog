@@ -5,6 +5,15 @@
  * @support Follow/tweet at https://twitter.com/MrAhmadAwais/
  */
 .post {
+  ul li {
+    list-style: none;
+    &::before {
+      color: #9900ff;
+      content: '•';
+      display: inline-block;
+      width: 1em;
+    }
+  }
   h2 {
     position: relative;
     margin: 55px 0px 12px;

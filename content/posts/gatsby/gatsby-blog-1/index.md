@@ -109,6 +109,7 @@ Gatsby default starter일 경우 아래와 같은 디렉토리 구조를 가진�
 |-- /public     빌드 결과가 들어가는 폴더
 |-- /src
     |-- /components     공통적으로 사용되는 리액트 컴포넌트 폴더
+    |-- /images         이미지파일 저장 폴더
     |-- /pages          기본 페이지 폴더, 컴포넌트의 파일 이름으로 URL이 생성된다.
         |-- /index.js       해당주소의 최상위 페이지
         |-- /404.js         에러 페이지
@@ -120,6 +121,5 @@ Gatsby default starter일 경우 아래와 같은 디렉토리 구조를 가진�
 |-- gatsby-browser.js   외부 라이브러리 정의 파일
 ```
 
-!각각 파일 및 폴더의 자세한 설명은
-<a href="https://www.gatsbyjs.org/docs/gatsby-project-structure/" target="_blank">상세참조사이트</a>
-에 자세히 기술되어있다.
+출처
+<a href="https://www.gatsbyjs.org/docs/gatsby-project-structure/" target="_blank">Gatsby Document</a>
