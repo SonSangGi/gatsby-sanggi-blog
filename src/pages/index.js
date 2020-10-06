@@ -1,36 +1,14 @@
 import React from 'react';
-import Layout from '../components/Layout';
+
+import Layout from '../components/Layout'; // 이놈 때문에 here are multiple modules with names that only differ in casing. This can lead to unexpected behavior when compiling on a filesystem with other case-semantic. Use equal casing. 오류..
 import Head from '../components/Head';
-import Page from '../components/Page';
 
-const IndexPage = ({ data, pageContext }) => {
-  const { edges } = data.allMarkdownRemark;
-  return (
-    <Layout>
-      <Head title="Home" />
-      <Page edges={edges} />
-    </Layout>
-  );
-};
+const NotFoundPage = () => (
+  <Layout>
+    <Head title="404: Not found" />
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  </Layout>
+);
 
-export default IndexPage;
-
-export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            category
-            date
-            title
-          }
-        }
-      }
-    }
-  }
-`;
+export default NotFoundPage;
